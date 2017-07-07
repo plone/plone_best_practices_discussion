@@ -50,6 +50,17 @@ That is especially useful as you could invoke environments that are normaly not 
 
     tox -e isort-apply
 
+A special feature of TOX is that you could call a group of envs by a common pattern,
+
+.. code-block:: ini
+
+    [tox]
+    envlist =
+        py{27,34,35,36,py}-Plone(43,50,51)
+        ...
+
+calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
+
 Also you can pass positional arguments to the test command, if the tox.ini forward that (``{posargs}``):
 
 .. code-block:: sh
