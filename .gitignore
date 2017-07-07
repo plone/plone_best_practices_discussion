@@ -1,5 +1,4 @@
-*.pyc
-*.pyo
+*.py[cod]
 *.tmp*
 *.mo
 *.egg
@@ -9,6 +8,7 @@
 .*.cfg
 bin/
 build/
+_build/
 develop-eggs/
 downloads/
 eggs/
@@ -16,3 +16,6 @@ fake-eggs/
 parts/
 dist/
 var/
+lib/
+include/
+share/
