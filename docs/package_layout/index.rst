@@ -21,6 +21,8 @@ Plone Package Layout
     ├─tox.ini
     ├─.editorconf
     ├─.travis.yml
-    ├─.coveragerc
     ├─.gitignore
     └─...
+
+
+.. include:: setup_cfg.rst
