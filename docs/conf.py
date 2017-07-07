@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# plone_best_practices_disscussion documentation build configuration file, created by
-# sphinx-quickstart on Fri Jul  7 14:12:05 2017.
+# plone_best_practices_disscussion documentation build configuration file.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -30,8 +29,10 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ['sphinx.ext.intersphinx',
-    'sphinx.ext.todo']
+extensions = [
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -46,7 +47,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'plone_best_practices_disscussion'
+project = u'Discussion on Plone Best Practices'
 copyright = u'2017, Plone Community'
 author = u'Plone Community'
 
@@ -110,66 +111,6 @@ html_sidebars = {
         'donate.html',
     ]
 }
-
-
-# -- Options for HTMLHelp output ------------------------------------------
-
-# Output file base name for HTML help builder.
-htmlhelp_basename = 'plone_best_practices_disscussiondoc'
-
-
-# -- Options for LaTeX output ---------------------------------------------
-
-latex_elements = {
-    # The paper size ('letterpaper' or 'a4paper').
-    #
-    # 'papersize': 'letterpaper',
-
-    # The font size ('10pt', '11pt' or '12pt').
-    #
-    # 'pointsize': '10pt',
-
-    # Additional stuff for the LaTeX preamble.
-    #
-    # 'preamble': '',
-
-    # Latex figure (float) alignment
-    #
-    # 'figure_align': 'htbp',
-}
-
-# Grouping the document tree into LaTeX files. List of tuples
-# (source start file, target name, title,
-#  author, documentclass [howto, manual, or own class]).
-latex_documents = [
-    (master_doc, 'plone_best_practices_disscussion.tex', u'plone\\_best\\_practices\\_disscussion Documentation',
-     u'Plone Community', 'manual'),
-]
-
-
-# -- Options for manual page output ---------------------------------------
-
-# One entry per manual page. List of tuples
-# (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'plone_best_practices_disscussion', u'plone_best_practices_disscussion Documentation',
-     [author], 1)
-]
-
-
-# -- Options for Texinfo output -------------------------------------------
-
-# Grouping the document tree into Texinfo files. List of tuples
-# (source start file, target name, title, author,
-#  dir menu entry, description, category)
-texinfo_documents = [
-    (master_doc, 'plone_best_practices_disscussion', u'plone_best_practices_disscussion Documentation',
-     author, 'plone_best_practices_disscussion', 'One line description of project.',
-     'Miscellaneous'),
-]
-
-
-
 
 # Example configuration for intersphinx: refer to the Python standard library.
 intersphinx_mapping = {'https://docs.python.org/': None}

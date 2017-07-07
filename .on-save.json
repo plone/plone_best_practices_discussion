@@ -1,0 +1,13 @@
+{
+  "commands": [{
+      "watch": "docs/**/*.rst",
+      "base": "src",
+      "command": "tox"
+    },
+    {
+      "watch": "code_snippets/**/*.*",
+      "base": "src",
+      "command": "tox"
+    }
+  ]
+}
