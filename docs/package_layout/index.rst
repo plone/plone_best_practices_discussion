@@ -1,7 +1,8 @@
 Plone Package Layout
 ====================
 
-
+We should encurage all developer to use a certain package layout.
+For example:
 
 .. code-block:: filesystem
 
@@ -9,6 +10,7 @@ Plone Package Layout
     ├─docs/ (Documentation / Sphinx)
     |  ├─index.rst
     |  ├─...
+    |  ├─distutils.conf
     |  └─conf.py
     ├─src/ (source code-block directory)
     |  └─...
@@ -17,7 +19,7 @@ Plone Package Layout
     ├─reports/ (tox will generate html reports in this directory)
     |  └─...
     ├─setup.py
-    ├─setup.cfg (Package Configuration)
+    ├─setup.cfg (Python Tools and Package Configuration)
     ├─tox.ini
     ├─.editorconf
     ├─.travis.yml
@@ -25,4 +27,50 @@ Plone Package Layout
     └─...
 
 
-.. include:: setup_cfg.rst
+The package root should only contain necessary files and directories that will also live in Version Control.
+
+* Necessary Python Package Files:
+
+  * setup.py --> Package Meta-Daten
+  * setup.cfg --> Python Tool and Package Configuration
+  * Manifest.in -->
+
+* Necessary Version Control Files (git / svn / hg):
+
+  * .gitignore
+  * .gitattributes
+
+* Test Configuration:
+
+  * tox.ini
+  * .travis.yml
+
+* Necessary general Files:
+
+  * README.rst --> Package Description used to show Package details on Version Control Platform and PyPI
+  * LICENSE --> License of this Package to presented on Version Control Platform
+  * .editorconfig --> Configuration File for Editors / IDEs to enforce basic Coding Convention
+
+* Subfolders with Meanings:
+
+  * src/ -->
+  * tests/ -->
+  * docs/ --> Package Documentation written in Sphinx / restructuredTest
+  * reports/ -->
+  * .tox/ -->
+  * bin/, lib/, include/, share/ -->
+
+
+Explainaition of Configuration Files
+------------------------------------
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Contents:
+
+    setup_cfg/index
+    editorconfig
+    ../tox/index
+    ../ci/travis-ci
+    ../ci/jenkins

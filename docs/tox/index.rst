@@ -20,9 +20,9 @@ The key feature of TOX, that allows to specify multiple Python and Framework ver
 TOX is not a replacement for Continuous Intergation Server, but it could help to translate those build matrixs for local test invocation.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
+    :maxdepth: 2
+    :caption: Contents:
 
-    usage
-    basic_structure
-    standard_sections
+    usage.rst
+    basic_structure.rst
+    standard_sections.rst

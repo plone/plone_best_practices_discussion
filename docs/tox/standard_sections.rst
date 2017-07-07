@@ -11,7 +11,7 @@ For Plone we recommend you to have the following special environments:
 
 Your ``tox.ini`` should look / start like this:
 
-.. include:: ../../code_snippets/tox.d/tox.ini
+.. include:: ../../code_snippets/tox.d/tox_main.ini
     :code: ini
 
 Flake8
