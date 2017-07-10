@@ -8,22 +8,17 @@ Install TOX somewhere so that you have the ``tox`` command in your path, recomme
 
 .. code-block:: sh
 
-    python -m venv <tox-env>
+    python -m venv <tox-env>  # Python 3.4+
+    virtualenv <tox-env>  # Python 2.7
     source <tox-env>/bin/activate
-    $<tox-env>/bin/pip install tox
+    <tox-env>/bin/pip install tox
 
 Simple Usage
 ------------
 
 Instead of invoking test commands directly, with tox you will invoke the ``tox`` command and the tox environments will invoke all test steps and commands for you.
 
-Call
-
-.. code-block:: sh
-
-    tox
-
-in your product base directory.
+Call ``tox`` in your product base directory.
 This will invoke all environments named in the tox.ini envlist:
 
 .. code-block:: ini
