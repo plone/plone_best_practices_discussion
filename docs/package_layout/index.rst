@@ -73,3 +73,4 @@ Explainaition of Configuration Files
     ../tox/index
     ../ci/travis-ci
     ../ci/jenkins
+    tests_folder
