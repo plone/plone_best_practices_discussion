@@ -53,13 +53,12 @@ The package root should only contain necessary files and directories that will a
 
 * Subfolders with Meanings:
 
-  * src/ -->
-  * tests/ -->
-  * docs/ --> Package Documentation written in Sphinx / restructuredTest
-  * reports/ -->
-  * .tox/ -->
-  * bin/, lib/, include/, share/ -->
-
+  * src/ --> Package Source Code
+  * tests/ --> Packge Tests should go into a separate folder in the base directory (To be discussed in detail)
+  * docs/ --> Package Documentation written in Sphinx / restructuredText
+  * reports/ --> generated HTML Reports of Code Convention Tests (not in VCS)
+  * .tox/ --> Folder where virtualenvs will be created and hold by tox (not in VCS)
+  * bin/, lib/, include/, share/ --> Folders that could exists, if virtualenv was invoked for developmemt on the base folder (not in VCS)
 
 Explainaition of Configuration Files
 ------------------------------------
