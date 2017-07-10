@@ -58,6 +58,13 @@ calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
 
 Also you can pass positional arguments to the test command, if the tox.ini forward that (``{posargs}``):
 
+.. code-block:: ini
+
+    [testenv]
+    commands =
+        {envbindir}/buildout -c {toxinidir}/buildout.cfg install test
+        coverage run {envbindir}/test -v1 --auto-color {posargs}
+
 .. code-block:: sh
 
     tox -- <positional argument>
