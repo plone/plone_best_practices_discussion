@@ -60,8 +60,8 @@ The package root should only contain necessary files and directories that will a
   * .tox/ --> Folder where virtualenvs will be created and hold by tox (not in VCS)
   * bin/, lib/, include/, share/ --> Folders that could exists, if virtualenv was invoked for developmemt on the base folder (not in VCS)
 
-Explainaition of Configuration Files
-------------------------------------
+Explanaition of Configuration Files
+-----------------------------------
 
 
 .. toctree::
