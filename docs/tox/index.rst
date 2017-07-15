@@ -4,7 +4,7 @@ TOX - A Test Invocation Tool
 
 The Plone community believes in certain best practices for software development.
 
-Documentation, Coding Conventions and Tests are essential elements of a continuous and reproducibale software development quality.
+Documentation, Coding Conventions and Tests are essential elements of a continuous and reproducible software development quality.
 
 The community is large enough to set standards in the whole Python world, but to small to maintain several tools that are not directly connected to Plone the Product.
 
@@ -17,7 +17,7 @@ It is a good tool to create a set of independent test environments and call them
 TOX allows to specify a list of environments which will be executed on invocation.
 The key feature of TOX, that allows to specify multiple Python and Framework versions to test the package makes it very useful on local development.
 
-TOX is not a replacement for Continuous Intergation Server, but it could help to translate those build matrixs for local test invocation.
+TOX is not a replacement for Continuous Integration Server, but it could help to translate those build matrix for local test invocation.
 
 .. toctree::
     :maxdepth: 2
