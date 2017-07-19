@@ -6,12 +6,14 @@ Installation
 
 Install TOX somewhere so that you have the ``tox`` command in your path, recommended is to have it in a separate vitualenv.
 
-.. code-block:: sh
+.. code-block:: console
 
-    python -m venv <tox-env>  # Python 3.4+
-    virtualenv <tox-env>  # Python 2.7
-    source <tox-env>/bin/activate
-    <tox-env>/bin/pip install tox
+    # For Python 3.4+ you could use this
+    $ python -m venv <tox-env>
+    # On Python 2.7 or Python 3 before 3.4 please use
+    $ virtualenv <tox-env>
+    $ source <tox-env>/bin/activate
+    $ <tox-env>/bin/pip install tox
 
 Simple Usage
 ------------
@@ -22,6 +24,7 @@ Call ``tox`` in your product base directory.
 This will invoke all environments named in the tox.ini envlist:
 
 .. code-block:: ini
+   :emphasize-lines: 2
 
     [tox]
     envlist =
@@ -35,19 +38,20 @@ This will invoke all environments named in the tox.ini envlist:
 
 You also can invoke only a specific set of tox environments by:
 
-.. code-block:: sh
+.. code-block:: console
 
-    tox -e <env1>,<env2>,...,<env#>
+    $ tox -e <env1>,<env2>,...,<env#>
 
 That is especially useful as you could invoke environments that are normaly not used, as they are not on the envlist.
 
-.. code-block:: sh
+.. code-block:: console
 
-    tox -e isort-apply
+    $ tox -e isort-apply
 
 A special feature of TOX is that you could call a group of envs by a common pattern,
 
 .. code-block:: ini
+   :emphasize-lines: 3
 
     [tox]
     envlist =
@@ -59,25 +63,26 @@ calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
 Also you can pass positional arguments to the test command, if the tox.ini forward that (``{posargs}``):
 
 .. code-block:: ini
+   :emphasize-lines: 4
 
     [testenv]
     commands =
         {envbindir}/buildout -c {toxinidir}/buildout.cfg install test
         coverage run {envbindir}/test -v1 --auto-color {posargs}
 
-.. code-block:: sh
+.. code-block:: console
 
-    tox -- <positional argument>
+    $ tox -- <positional argument>
 
 for example:
 
-.. code-block:: sh
+.. code-block:: console
 
     # invoke pdb on test failure (pytest)
-    tox -- --pdb
+    $ tox -- --pdb
 
     # invoke all tests ()
-    tox -- --all
+    $ tox -- --all
 
 As Git-hook
 -----------
@@ -86,22 +91,22 @@ As TOX is useful to ensure code-block quality check, it might be a good idea to 
 
 Therefore create / edit the file ``<product base_path>/.git/hooks/pre-commit`` and add a line that invokes tox with those environments, for example:
 
-.. code-block:: sh
+.. code-block:: console
 
-    tox -e flake8,isort,docs
+    $ tox -e flake8,isort,docs
 
 Advanced Usage
 --------------
 
 TOX has a lot of features and possibilities.
-Please refere to the `tox documentation <http://tox.readthedocs.io/en/latest/>`_ to get up to date documentation.
+Please refer to the `tox documentation <http://tox.readthedocs.io/en/latest/>`_ to get up to date documentation.
 
-Continiuous Integration Servers (CI)
-------------------------------------
+Continuous Integration Servers (CI)
+-----------------------------------
 
 If external Continiuous Intergation Servers are used to test your package, the results should be identical to a local tox run, therefore the CI-Servers should invoke tox and not any other additional test commands.
 
-Only optimisations for caching, parallel build, notification and additional steps should be in their configs.
+Only optimizations for caching, parallel build, notification and additional steps should be in their configs.
 
 Travis-CI
 ~~~~~~~~~

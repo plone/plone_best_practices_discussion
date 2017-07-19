@@ -11,39 +11,40 @@ For Plone we recommend you to have the following special environments:
 
 Your ``tox.ini`` should look / start like this:
 
-.. include:: ../../code_snippets/tox.d/tox_main.ini
-    :code: ini
+.. literalinclude:: ../../code_snippets/tox.d/tox_main.ini
+    :language: ini
 
 Flake8
 ~~~~~~
 
 `flake8 <http://flake8.pycqa.org/en/latest/>`_ is a adaptable linter for Python that helps you to enforce coding conventions.
 
-.. include:: ../../code_snippets/tox.d/flake8.ini
-    :code: ini
+.. literalinclude:: ../../code_snippets/tox.d/flake8.ini
+    :language: ini
 
 Isort & Isort-apply
 ~~~~~~~~~~~~~~~~~~~
 
 `isort <http://isort.readthedocs.io/en/latest/>`_ is a Python utility to sort import
 
-.. include:: ../../code_snippets/tox.d/isort.ini
-    :code: ini
+.. literalinclude:: ../../code_snippets/tox.d/isort.ini
+    :language: ini
 
 Docs
 ~~~~
 
-.. include:: ../../code_snippets/tox.d/docs.ini
-    :code: ini
+.. literalinclude:: ../../code_snippets/tox.d/docs.ini
+    :language: ini
+
 Coverage-report
 ~~~~~~~~~~~~~~~
 
 
-.. include:: ../../code_snippets/tox.d/coverage.ini
-    :code: ini
+.. literalinclude:: ../../code_snippets/tox.d/coverage.ini
+    :language: ini
 
 Release
 ~~~~~~~
 
-.. include:: ../../code_snippets/tox.d/release.ini
-    :code: ini
+.. literalinclude:: ../../code_snippets/tox.d/release.ini
+    :language: ini
