@@ -29,6 +29,7 @@ Isort & Isort-apply
 
 .. literalinclude:: ../../code_snippets/tox.d/isort.ini
     :language: ini
+    :emphasize-lines: 1,10
 
 Docs
 ~~~~
