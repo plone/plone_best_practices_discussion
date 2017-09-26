@@ -43,10 +43,10 @@ def compare_config_files(config_file, best_practice_dir):
         #
         # print('\n\n### Current Config:')
         # current_config.write(sys.stdout)
-        # with open(config_file + '.new', 'wb') as new_file:
-        #     best_practice_config.write(new_file)
-        # with open(config_file + '.old', 'wb') as old_file:
-        #     current_config.write(old_file)
+        with open(config_file + '.new', 'wb') as new_file:
+            best_practice_config.write(new_file)
+        with open(config_file + '.old', 'wb') as old_file:
+            current_config.write(old_file)
         with open(config_file + '.tab_replace', 'wb') as old_file:
             old_file.write(current_stream.getvalue().replace('\t', '    '))
 
