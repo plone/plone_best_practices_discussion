@@ -1,6 +1,6 @@
 
 from os import listdir
-from StringIO import StringIO
+from io import BytesIO
 
 import os.path
 import sys
@@ -22,35 +22,30 @@ def compare_config_files(config_file, best_practice_dir):
         ]
     elif os.path.isfile(best_practice_dir):
         best_practice_files.append(best_practice_dir)
-    best_practice_config = ConfigParser()
+    best_practice_config = ConfigParser(allow_no_value=True)
     best_practice_config.read(best_practice_files)
 
-    current_config = ConfigParser()
+    current_config = ConfigParser(allow_no_value=True)
     current_config.read(config_file)
-
-    best_practice_stream = StringIO()
-    best_practice_config.write(best_practice_stream)
-    current_stream = StringIO()
-    current_config.write(current_stream)
-    if best_practice_stream.getvalue() == current_stream.getvalue():
-        print('Equals')
+    if best_practice_config._sections == current_config._sections:
         return True
-    else:
-        print('Update Config')
+    #return False
 
-        # print('### Best Practice Config:')
-        # best_practice_config.write(sys.stdout)
-        #
-        # print('\n\n### Current Config:')
-        # current_config.write(sys.stdout)
-        with open(config_file + '.new', 'wb') as new_file:
-            best_practice_config.write(new_file)
-        with open(config_file + '.old', 'wb') as old_file:
-            current_config.write(old_file)
-        with open(config_file + '.tab_replace', 'wb') as old_file:
-            old_file.write(current_stream.getvalue().replace('\t', '    '))
 
-        return False
+    print('Update Config')
+
+    # print('### Best Practice Config:')
+    # best_practice_config.write(sys.stdout)
+    #
+    # print('\n\n### Current Config:')
+    # current_config.write(sys.stdout)
+    with open(config_file + '.new', 'w') as new_file:
+        best_practice_config.write(new_file)
+    with open(config_file + '.old', 'w') as old_file:
+        current_config.write(old_file)
+    import pdb; pdb.set_trace()
+    best_practice_config.write(sys.stdout)
+    return False
 
 
 if __name__ == '__main__':
