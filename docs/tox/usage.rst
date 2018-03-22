@@ -137,6 +137,10 @@ Travis-CI
 
 If your Package runs Travis-CI it should be contain a ``.travis.yml`` file.
 
+.. literalinclude:: ../../code_snippets/travis-ci.d/00_main.yml
+    :language: yaml
+    :emphasize-lines: 7-11,32
+
 Jenkins
 ~~~~~~~
 

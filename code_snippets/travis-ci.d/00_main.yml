@@ -1,0 +1,45 @@
+language: python
+sudo: false
+
+python:
+    - 2.7
+
+env:
+    - ENVIRON=py
+      TOXENV=py27-Plone51
+    - ENVIRON=code-conventions
+      TOXENV=isort,flake8,code-analysis
+
+
+before_install:
+    - mkdir -p $HOME/buildout-cache/{downloads,eggs,extends}
+    - mkdir $HOME/.buildout
+    - echo "[buildout]" > $HOME/.buildout/default.cfg
+    - echo "download-cache = $HOME/buildout-cache/downloads" >> $HOME/.buildout/default.cfg
+    - echo "eggs-directory = $HOME/buildout-cache/eggs" >> $HOME/.buildout/default.cfg
+    - echo "extends-cache = $HOME/buildout-cache/extends" >> $HOME/.buildout/default.cfg
+    - echo "abi-tag-eggs = true" >> $HOME/.buildout/default.cfg
+
+install:
+    - travis_retry pip install -U setuptools==33.1.1 tox coveralls coverage
+
+before_script:
+    - export DISPLAY=:99.0
+    - sh -e /etc/init.d/xvfb start
+    - firefox -v
+
+script:
+    - travis_retry tox
+
+after_success:
+    - coverage combine
+    - coveralls
+
+notifications:
+    email: false
+
+cache:
+    pip: true
+    directories:
+      - eggs
+      - $HOME/buildout-cache
