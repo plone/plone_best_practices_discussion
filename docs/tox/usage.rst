@@ -113,13 +113,15 @@ Please refer to the `tox documentation <http://tox.readthedocs.io/en/latest/>`_ 
 Usage with zc.buildout
 ----------------------
 
-TOX with zc.buildout is not that straight foreward, but possible to run against multiple Versione of Python and Plone together:
+The following snippets shows how you can use zc.buildout with tox,
+when you want it to run for multiple versions of Python and Plone at once.
 
 .. literalinclude:: ../../code_snippets/tox.d/10_buildout.ini
     :language: ini
     :emphasize-lines: 8-12,16-19
 
-where your package needs to contain a version file that looks like that:
+The version files need to be passed explicitly to the buildout command.
+Here is an example, how a version file within your package needs should look like:
 
 .. literalinclude:: ../../code_snippets/tox.d/11_version_plone51.cfg
     :language: ini
