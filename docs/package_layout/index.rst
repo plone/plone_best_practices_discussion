@@ -1,7 +1,17 @@
 Plone Package Layout
 ====================
 
-We should encurage all developer to use a certain package layout.
+We should encourage all developer to use a certain package layout.
+There are two tools,
+that make it very easy to generate such a layout for packages.
+
+* `bobtemplates.plone <https://github.com/plone/bobtemplates.plone>`_ provides templates to generate packages for Plone projects.
+
+* The `Plone CLI <https://pypi.python.org/pypi/plonecli>`_ is the modern way to easily create all needed package structures for development.
+  It uses the templates provided by bobtemplates.plone.
+
+(Historically this templates were written for a general tool called `mr.bob <https://pypi.python.org/pypi/mr.bob>`_.)
+
 For example:
 
 .. code-block:: filesystem
