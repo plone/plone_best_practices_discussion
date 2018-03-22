@@ -18,7 +18,7 @@
 # import os
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
-
+import datetime
 
 # -- General configuration ------------------------------------------------
 
@@ -48,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Discussion on Plone Best Practices'
-copyright = u'2017, Plone Community'
+copyright = str(datetime.date.today().year) + u'2018, Plone Community'
 author = u'Plone Community'
 
 # The version info for the project you're documenting, acts as replacement for
