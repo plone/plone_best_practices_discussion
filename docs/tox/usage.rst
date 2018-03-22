@@ -68,6 +68,7 @@ which will be expanded by tox.
         py{27,34,35,36,py}-Plone{43,50,51}
         ...
 
+The command ``tox -l`` lists all the available environment names.
 Calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
 
 Also you can pass positional arguments to the test command, if the tox.ini forward that (``{posargs}``):
