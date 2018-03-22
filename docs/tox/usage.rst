@@ -101,6 +101,53 @@ Advanced Usage
 TOX has a lot of features and possibilities.
 Please refer to the `tox documentation <http://tox.readthedocs.io/en/latest/>`_ to get up to date documentation.
 
+Usage with zc.buildout
+----------------------
+
+TOX with zc.buildout is not that straight foreward, but possible to run against multiple Versione of Python and Plone together:
+
+.. code-block:: ini
+
+    [tox]
+    envlist =
+        py{27,36}-Plone{50,51},
+
+    [testenv]
+    skip_install = true
+
+    extras =
+        develop
+        test
+
+    commands =
+        {envbindir}/buildout -c {toxinidir}/{env:version_file} buildout:directory={envdir} buildout:develop={toxinidir} bootstrap
+        {envbindir}/buildout -c {toxinidir}/{env:version_file} buildout:directory={envdir} buildout:develop={toxinidir} annotate
+        {envbindir}/buildout -c {toxinidir}/{env:version_file} buildout:directory={envdir} buildout:develop={toxinidir} install test
+        coverage run {envbindir}/test -v1 --auto-color {posargs}
+
+    setenv =
+        COVERAGE_FILE=.coverage.{envname}
+        version_file=version_plone51.cfg
+        Plone50: version_file=version_plone50.cfg
+        Plone51: version_file=version_plone51.cfg
+        Plone52: version_file=version_plone52.cfg
+
+    deps =
+        setuptools==33.1.1
+        zc.buildout==2.8.0
+        coverage
+
+
+where your package needs to contain a version file that looks like that:
+
+.. code-block: ini
+
+    [buildout]
+
+    extends =
+        http://dist.plone.org/release/5.1-latest/versions.cfg
+        buildout.cfg
+
 Continuous Integration Servers (CI)
 -----------------------------------
 
