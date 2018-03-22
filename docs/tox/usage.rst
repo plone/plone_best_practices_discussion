@@ -15,11 +15,13 @@ Install tox somewhere so that you have the ``tox`` command in your path, recomme
     $ cd <tox-env>
     $ /bin/pip install tox
 
-.. note::
-    *currently there seems to be a problem with* ``python3 -m venv`` *command, so that tox fail.*
-    Please install with Python 2.7
+.. warning::
+    *On macOS there currently seems to be a problem with* ``python3 -m venv`` *command, that makes tox fail.*
+    Please use Python 2.7 and virtualenv in this case.
 
-    I recommend to add the ``tox`` command to your global command scope, so that you could use it with all other virtualenvs:
+.. note::
+    I recommend to add the ``tox`` command to your global command scope,
+    so that you could use it with all other virtualenvs:
 
     .. code-block:: console
 
@@ -29,7 +31,8 @@ Install tox somewhere so that you have the ``tox`` command in your path, recomme
 Simple Usage
 ------------
 
-Instead of invoking test commands directly, with tox you will invoke the ``tox`` command and the tox environments will invoke all test steps and commands for you.
+Instead of invoking test commands directly,
+with tox you will invoke the ``tox`` command and the tox environments will invoke all test steps and commands for you.
 
 Call ``tox`` in your product base directory.
 This will invoke all environments named in the tox.ini envlist:
