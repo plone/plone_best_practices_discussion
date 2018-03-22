@@ -1,7 +1,9 @@
-Basic Strcuture
+Basic Structure
 ===============
 
-TOX follows the UNIX philosphy to do only one thing and do that right. One second philosophy element is also followed, the configuration by a text files: the tox.ini files.
+TOX follows the UNIX philosophy to do only one thing and do that right.
+One second philosophy element is also followed,
+the configuration by a text files: the tox.ini files.
 
 tox.ini files are very similar to zc.buildout's buildout.cfg.
 They start with a general ``tox`` section that has a ``envlist`` parameter list comparable to ``buildout``'s ``parts`` list
