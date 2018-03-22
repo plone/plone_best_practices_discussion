@@ -48,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Discussion on Plone Best Practices'
-copyright = str(datetime.date.today().year) + u'2018, Plone Community'
+copyright = str(datetime.date.today().year) + u', Plone Community'
 author = u'Plone Community'
 
 # The version info for the project you're documenting, acts as replacement for
