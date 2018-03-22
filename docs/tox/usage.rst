@@ -12,17 +12,19 @@ Install tox somewhere so that you have the ``tox`` command in your path, recomme
     $ python -m venv <tox-env>
     # On Python 2.7 or Python 3 before 3.4 please use
     $ virtualenv <tox-env>
-    $ cd <tox-env>/bin/pip install tox
+    $ cd <tox-env>
+    $ /bin/pip install tox
 
-*currently there seems to be a problem with* ``python3 -m venv`` *command, so that tox fail.*
-Please install with Python 2.7
+.. note::
+    *currently there seems to be a problem with* ``python3 -m venv`` *command, so that tox fail.*
+    Please install with Python 2.7
 
-I recommend to add the ``tox`` command to your global command scope, so that you could use it with all other virtualenvs:
+    I recommend to add the ``tox`` command to your global command scope, so that you could use it with all other virtualenvs:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ cd /usr/local/bin
-    $ ln -s <tox-env>/bin/tox tox
+        $ cd /usr/local/bin
+        $ ln -s <tox-env>/bin/tox tox
 
 Simple Usage
 ------------
@@ -57,7 +59,8 @@ That is especially useful as you could invoke environments that are normaly not 
 
     $ tox -e isort-apply
 
-A special feature of TOX is that you could call a group of envs by a common pattern,
+Long, repetitive lists of enviroments can written in a short form called `Generative envlist <https://tox.readthedocs.io/en/latest/config.html#generative-envlist>`_,
+which will be expanded by tox.
 
 .. code-block:: ini
    :emphasize-lines: 3
@@ -67,7 +70,8 @@ A special feature of TOX is that you could call a group of envs by a common patt
         py{27,34,35,36,py}-Plone{43,50,51}
         ...
 
-calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
+The command ``tox -l`` lists all the available environment names.
+Calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
 
 Also you can pass positional arguments to the test command, if the tox.ini forward that (``{posargs}``):
 
@@ -113,13 +117,15 @@ Please refer to the `tox documentation <http://tox.readthedocs.io/en/latest/>`_ 
 Usage with zc.buildout
 ----------------------
 
-TOX with zc.buildout is not that straight foreward, but possible to run against multiple Versione of Python and Plone together:
+The following snippets shows how you can use zc.buildout with tox,
+when you want it to run for multiple versions of Python and Plone at once.
 
 .. literalinclude:: ../../code_snippets/tox.d/10_buildout.ini
     :language: ini
     :emphasize-lines: 8-12,16-19
 
-where your package needs to contain a version file that looks like that:
+The version files need to be passed explicitly to the buildout command.
+Here is an example, how a version file within your package needs should look like:
 
 .. literalinclude:: ../../code_snippets/tox.d/11_version_plone51.cfg
     :language: ini
