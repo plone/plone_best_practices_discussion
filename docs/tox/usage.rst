@@ -64,7 +64,7 @@ A special feature of TOX is that you could call a group of envs by a common patt
 
     [tox]
     envlist =
-        py{27,34,35,36,py}-Plone(43,50,51)
+        py{27,34,35,36,py}-Plone{43,50,51}
         ...
 
 calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
