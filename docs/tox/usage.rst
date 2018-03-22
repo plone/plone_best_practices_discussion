@@ -57,7 +57,8 @@ That is especially useful as you could invoke environments that are normaly not 
 
     $ tox -e isort-apply
 
-A special feature of TOX is that you could call a group of envs by a common pattern,
+Long, repetitive lists of enviroments can written in a short form called `Generative envlist <https://tox.readthedocs.io/en/latest/config.html#generative-envlist>`_,
+which will be expanded by tox.
 
 .. code-block:: ini
    :emphasize-lines: 3
@@ -67,7 +68,7 @@ A special feature of TOX is that you could call a group of envs by a common patt
         py{27,34,35,36,py}-Plone{43,50,51}
         ...
 
-calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
+Calling ``tox -e py27`` would invoke py27-Plone43, py27-Plone50, py27-Plone51.
 
 Also you can pass positional arguments to the test command, if the tox.ini forward that (``{posargs}``):
 
