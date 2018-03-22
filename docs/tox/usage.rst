@@ -4,7 +4,7 @@ Usage
 Installation
 ------------
 
-Install TOX somewhere so that you have the ``tox`` command in your path, recommended is to have it in a separate vitualenv.
+Install tox somewhere so that you have the ``tox`` command in your path, recommended is to have it in a separate vitualenv.
 
 .. code-block:: console
 
@@ -12,8 +12,17 @@ Install TOX somewhere so that you have the ``tox`` command in your path, recomme
     $ python -m venv <tox-env>
     # On Python 2.7 or Python 3 before 3.4 please use
     $ virtualenv <tox-env>
-    $ source <tox-env>/bin/activate
-    $ <tox-env>/bin/pip install tox
+    $ cd <tox-env>/bin/pip install tox
+
+*currently there seems to be a problem with* ``python3 -m venv`` *command, so that tox fail.*
+Please install with Python 2.7
+
+I recommend to add the ``tox`` command to your global command scope, so that you could use it with all other virtualenvs:
+
+.. code-block:: console
+
+    $ cd /usr/local/bin
+    $ ln -s <tox-env>/bin/tox tox
 
 Simple Usage
 ------------
@@ -98,7 +107,7 @@ Therefore create / edit the file ``<product base_path>/.git/hooks/pre-commit`` a
 Advanced Usage
 --------------
 
-TOX has a lot of features and possibilities.
+tox has a lot of features and possibilities.
 Please refer to the `tox documentation <http://tox.readthedocs.io/en/latest/>`_ to get up to date documentation.
 
 Usage with zc.buildout
@@ -106,47 +115,15 @@ Usage with zc.buildout
 
 TOX with zc.buildout is not that straight foreward, but possible to run against multiple Versione of Python and Plone together:
 
-.. code-block:: ini
-
-    [tox]
-    envlist =
-        py{27,36}-Plone{50,51},
-
-    [testenv]
-    skip_install = true
-
-    extras =
-        develop
-        test
-
-    commands =
-        {envbindir}/buildout -c {toxinidir}/{env:version_file} buildout:directory={envdir} buildout:develop={toxinidir} bootstrap
-        {envbindir}/buildout -c {toxinidir}/{env:version_file} buildout:directory={envdir} buildout:develop={toxinidir} annotate
-        {envbindir}/buildout -c {toxinidir}/{env:version_file} buildout:directory={envdir} buildout:develop={toxinidir} install test
-        coverage run {envbindir}/test -v1 --auto-color {posargs}
-
-    setenv =
-        COVERAGE_FILE=.coverage.{envname}
-        version_file=version_plone51.cfg
-        Plone50: version_file=version_plone50.cfg
-        Plone51: version_file=version_plone51.cfg
-        Plone52: version_file=version_plone52.cfg
-
-    deps =
-        setuptools==33.1.1
-        zc.buildout==2.8.0
-        coverage
-
+.. literalinclude:: ../../code_snippets/tox.d/10_buildout.ini
+    :language: ini
+    :emphasize-lines: 8-12,16-19
 
 where your package needs to contain a version file that looks like that:
 
-.. code-block:: ini
-
-    [buildout]
-
-    extends =
-        http://dist.plone.org/release/5.1-latest/versions.cfg
-        buildout.cfg
+.. literalinclude:: ../../code_snippets/tox.d/11_version_plone51.cfg
+    :language: ini
+    :emphasize-lines: 3-5
 
 Continuous Integration Servers (CI)
 -----------------------------------
