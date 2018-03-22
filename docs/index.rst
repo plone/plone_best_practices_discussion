@@ -15,6 +15,8 @@ Those **Best Practices** did conflict in some cases with up to date Python Best 
 Therefore this Repository is a platform to discuss tools, code snippets and conventions.
 Elements the community have agreed on, should be moved / implemented in plonecli / bobtemplates.plone and the buildout.coredev.
 
+This is a deliverable of `PLIP: TOX as new standard test invocation tool in Plone and Plone guidelines (#2072)  <https://github.com/plone/Products.CMFPlone/issues/2072>`_.
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
