@@ -140,7 +140,7 @@ TOX with zc.buildout is not that straight foreward, but possible to run against 
 
 where your package needs to contain a version file that looks like that:
 
-.. code-block: ini
+.. code-block:: ini
 
     [buildout]
 
