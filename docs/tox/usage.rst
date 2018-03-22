@@ -12,17 +12,19 @@ Install tox somewhere so that you have the ``tox`` command in your path, recomme
     $ python -m venv <tox-env>
     # On Python 2.7 or Python 3 before 3.4 please use
     $ virtualenv <tox-env>
-    $ cd <tox-env>/bin/pip install tox
+    $ cd <tox-env>
+    $ /bin/pip install tox
 
-*currently there seems to be a problem with* ``python3 -m venv`` *command, so that tox fail.*
-Please install with Python 2.7
+.. note::
+    *currently there seems to be a problem with* ``python3 -m venv`` *command, so that tox fail.*
+    Please install with Python 2.7
 
-I recommend to add the ``tox`` command to your global command scope, so that you could use it with all other virtualenvs:
+    I recommend to add the ``tox`` command to your global command scope, so that you could use it with all other virtualenvs:
 
-.. code-block:: console
+    .. code-block:: console
 
-    $ cd /usr/local/bin
-    $ ln -s <tox-env>/bin/tox tox
+        $ cd /usr/local/bin
+        $ ln -s <tox-env>/bin/tox tox
 
 Simple Usage
 ------------
