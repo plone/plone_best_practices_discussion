@@ -16,6 +16,7 @@ It is an essential tool to create a set of independent test environments and cal
 
 tox allows to specify a list of environments which will be executed on invocation.
 The key feature of tox, that allows to specify multiple Python and Framework versions to test the package makes it very useful on local development.
+For working with different Python versions those need to be installed and avaliable to tox, `pyenv <https://github.com/pyenv/pyenv>`_` is a tool that could help here.
 
 tox is not a replacement for Continuous Integration Server, but it could help to translate those build matrix for local test invocation.
 

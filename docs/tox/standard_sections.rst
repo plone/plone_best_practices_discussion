@@ -14,17 +14,10 @@ Your ``tox.ini`` should look / start like this:
 .. literalinclude:: ../../code_snippets/tox.d/00_tox_main.ini
     :language: ini
 
-Flake8
-~~~~~~
+Flake8, Isort & Isort-apply
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 `flake8 <http://flake8.pycqa.org/en/latest/>`_ is a adaptable linter for Python that helps you to enforce coding conventions.
-
-.. literalinclude:: ../../code_snippets/tox.d/90_lint.ini
-    :language: ini
-
-Isort & Isort-apply
-~~~~~~~~~~~~~~~~~~~
-
 `isort <http://isort.readthedocs.io/en/latest/>`_ is a Python utility to sort import
 
 .. literalinclude:: ../../code_snippets/tox.d/90_lint.ini
