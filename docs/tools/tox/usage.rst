@@ -155,14 +155,14 @@ Usage with zc.buildout
 The following snippets shows how you can use zc.buildout with tox,
 when you want it to run for multiple versions of Python and Plone at once.
 
-.. literalinclude:: ../../code_snippets/tox.d/10_buildout.ini
+.. literalinclude:: ../../../code_snippets/tox.d/10_buildout.ini
     :language: ini
     :emphasize-lines: 8-12,16-19
 
 The version files need to be passed explicitly to the buildout command.
 Here is an example, how a version file within your package needs should look like:
 
-.. literalinclude:: ../../code_snippets/tox.d/11_version_plone51.cfg
+.. literalinclude:: ../../../code_snippets/tox.d/11_version_plone51.cfg
     :language: ini
     :emphasize-lines: 3-5
 
@@ -178,7 +178,7 @@ Travis-CI
 
 If your Package runs Travis-CI it should be contain a ``.travis.yml`` file.
 
-.. literalinclude:: ../../code_snippets/travis-ci.d/00_main.yml
+.. literalinclude:: ../../../code_snippets/travis-ci.d/00_main.yml
     :language: yaml
     :emphasize-lines: 4-14,26
 
