@@ -17,6 +17,45 @@ Elements the community have agreed on, should be moved / implemented in plonecli
 
 This is a deliverable of `PLIP: TOX as new standard test invocation tool in Plone and Plone guidelines (#2072)  <https://github.com/plone/Products.CMFPlone/issues/2072>`_.
 
+
+Background
+==========
+
+The **Zen of Python** was written with the lessons learned from Zope in mind.
+A lot of those philosopical phases do not only apply to code but also to community practices, habits and methodoligies.
+
+.. code-block:: pycon
+    :emphasize-lines: 5, 15-16, 18
+
+    >>> import this
+    The Zen of Python, by Tim Peters
+
+    Beautiful is better than ugly.
+    Explicit is better than implicit.
+    Simple is better than complex.
+    Complex is better than complicated.
+    Flat is better than nested.
+    Sparse is better than dense.
+    Readability counts.
+    Special cases aren't special enough to break the rules.
+    Although practicality beats purity.
+    Errors should never pass silently.
+    Unless explicitly silenced.
+    In the face of ambiguity, refuse the temptation to guess.
+    There should be one-- and preferably only one --obvious way to do it.
+    Although that way may not be obvious at first unless you're Dutch.
+    Now is better than never.
+    Although never is often better than *right* now.
+    If the implementation is hard to explain, it's a bad idea.
+    If the implementation is easy to explain, it may be a good idea.
+    Namespaces are one honking great idea -- let's do more of those!
+
+This Document is to make some implicit knowglede explicit avaliable and point to the prefered way of doing a thing.
+
+
+Contents
+========
+
 .. toctree::
    :maxdepth: 5
    :caption: Contents:
