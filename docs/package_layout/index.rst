@@ -17,6 +17,11 @@ For example:
 .. code-block:: filesystem
 
     <package root>/
+    ├─_build/ (tox will generate html reports in this directory)
+    |  ├─coverage
+    |  ├─docs
+    |  ├─flake8
+    |  ├─pytest
     ├─docs/ (Documentation / Sphinx)
     |  ├─index.rst
     |  ├─...
@@ -26,14 +31,15 @@ For example:
     |  └─...
     ├─tests/ (optional - external pytest test directory)
     |  └─...
-    ├─reports/ (tox will generate html reports in this directory)
-    |  └─...
-    ├─setup.py
-    ├─setup.cfg (Python Tools and Package Configuration)
-    ├─tox.ini
     ├─.editorconf
-    ├─.travis.yml
     ├─.gitignore
+    ├─.gitattributes
+    ├─.travis.yml
+    ├─Manifest.in
+    ├─README.{rst/md}
+    ├─setup.cfg (Python Tools and Package Configuration)
+    ├─setup.py
+    ├─tox.ini
     └─...
 
 
@@ -64,23 +70,20 @@ The package root should only contain necessary files and directories that will a
 * Subfolders with Meanings:
 
   * src/ --> Package Source Code
-  * tests/ --> Packge Tests should go into a separate folder in the base directory (To be discussed in detail)
+  * tests/ --> Packge Tests should go into a separate folder in the base directory (To be discussed in detail) ref:`test_folder`
   * docs/ --> Package Documentation written in Sphinx / restructuredText
-  * reports/ --> generated HTML Reports of Code Convention Tests (not in VCS)
+  * _build/ --> generated HTML Reports (not in VCS)
   * .tox/ --> Folder where virtualenvs will be created and hold by tox (not in VCS)
   * bin/, lib/, include/, share/ --> Folders that could exists, if virtualenv was invoked for developmemt on the base folder (not in VCS)
 
 Explanation of Configuration Files
 ----------------------------------
 
-
 .. toctree::
     :maxdepth: 2
     :caption: Contents:
 
     setup_cfg/index
-    editorconfig
     ../tox/index
     ../ci/travis-ci
     ../ci/jenkins
-    tests_folder

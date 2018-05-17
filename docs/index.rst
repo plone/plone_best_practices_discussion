@@ -18,11 +18,11 @@ Elements the community have agreed on, should be moved / implemented in plonecli
 This is a deliverable of `PLIP: TOX as new standard test invocation tool in Plone and Plone guidelines (#2072)  <https://github.com/plone/Products.CMFPlone/issues/2072>`_.
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 5
    :caption: Contents:
 
    package_layout/index.rst
-   tox/index.rst
+   tools/index.rst
 
 Indices and tables
 ==================

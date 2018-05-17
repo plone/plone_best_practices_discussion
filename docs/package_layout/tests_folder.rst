@@ -1,3 +1,5 @@
+.. test_folder_ ::
+
 tests Folder in Package Root
 ----------------------------
 
