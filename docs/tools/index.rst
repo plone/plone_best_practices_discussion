@@ -39,4 +39,25 @@ Cloud Tools
 
     travis_ci/index.rst
     appveyor/index.rst
-    cicleci/index.rst
+    circleci/index.rst
+
+
+Other Tools (To be Sorted)
+==========================
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Placeholder
+
+    pyenv/index.rst
+    zest.releaser/index.rst
+    vagrant/index.rst
+    plonecli/index.rst
+    mr.bob/index.rst
+    mr.bob/bobtemplates.plone/index.rst
+    docker/index.rst
+    coverage/index.rst
+    cookiecutter/index.rst
+    ansible/index.rst
+    autopep8/index.rst

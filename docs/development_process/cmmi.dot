@@ -1,0 +1,50 @@
+graph cmmi {
+    rankdir=BT;
+
+    node[style=filled shape=box width=2.5];
+    edge[]
+
+    l1 [label="Level 1:\n Initial" fillcolor=red shape=box width=2.5];
+    l2 [label="Level 2:\n Managed"  fillcolor=orange shape=box width=2.5];
+    l3 [label="Level 3:\n Defined"  fillcolor=yellow shape=box width=2.5];
+    l4 [label="Level 4:\n Quantitatively Managed"  fillcolor=greenyellow shape=box width=2.5];
+    l5 [label="Level 5:\n Optimizing"  fillcolor=green shape=box width=2.5];
+
+    l1c [label="Process unpredictable, poorly controlled and reactive" shape=note  fillcolor=lightyellow width=3];
+    l2c [label="Process characterized for projects and is often reactive" shape=note  fillcolor=lightyellow width=3];
+    l3c [label="Process characterized for the organisation and is proactice" shape=note  fillcolor=lightyellow width=3];
+    l4c [label="Process measured and controlled" shape=note  fillcolor=lightyellow width=3];
+    l5c [label="Focus on process improvement" shape=note  fillcolor=lightyellow width=3];
+
+    l2b [style=dashed shape=box, width=1 ];
+    l3b [style=dashed shape=box, width=2 ];
+    l4b [style=dashed shape=box, width=3 ];
+    l5b [style=dashed shape=box, width=4 ];
+
+    l1 -- l2 [dir=forward];
+    l2 -- l3 [dir=forward];
+    l3 -- l4 [dir=forward];
+    l4 -- l5 [dir=forward];
+
+    l1 -- l1c [style=dashed];
+    l2 -- l2c [style=dashed];
+    l3 -- l3c [style=dashed];
+    l4 -- l4c [style=dashed];
+    l5 -- l5c [style=dashed];
+
+    l1 -- l2b [style=invis];
+    l2b -- l3b [style=invis];
+    l3b -- l4b [style=invis];
+    l4b -- l5b [style=invis];
+    l2b -- l2 [style=invis];
+    l3b -- l3 [style=invis];
+    l4b -- l4 [style=invis];
+    l5b -- l5 [style=invis];
+
+
+    {rank = same; l1; l1c;}
+    {rank = same; l2; l2c; l2b;}
+    {rank = same; l3; l3c; l3b;}
+    {rank = same; l4; l4c; l4b;}
+    {rank = same; l5; l5c; l5b;}
+}

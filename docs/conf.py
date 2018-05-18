@@ -32,6 +32,8 @@ import datetime
 extensions = [
     'sphinx.ext.intersphinx',
     'sphinx.ext.todo',
+    'sphinxcontrib.plantuml',
+    'sphinx.ext.graphviz',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -78,6 +80,9 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = True
 
+# Graphviz settings
+
+graphviz_output_format = "svg"
 
 # -- Options for HTML output ----------------------------------------------
 
