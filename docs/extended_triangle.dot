@@ -1,0 +1,16 @@
+graph it {
+
+    node[shape=rounded
+         width=2.5
+         height=0.8
+        ];
+
+    sw  [label=<<B>Software</B>>];
+    op  [label=<<B>Operations</B><BR/>ISO 20000:2011 / <BR/>ITIL / FitSM>];
+    dev [label=<<B>Development</B><BR/>CMMI-DEV>];
+
+    rank = same; op; dev;
+
+    sw -- {op, dev};
+    op -- dev [label="inteaction" dir=both style=dashed];
+}

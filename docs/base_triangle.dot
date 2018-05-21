@@ -1,0 +1,16 @@
+graph it {
+
+    node[shape=rounded
+         width=2
+         height=0.5
+        ];
+
+    sw  [label="Software"];
+    op  [label="Operations"];
+    dev [label="Development"];
+
+    rank = same; op; dev;
+
+    sw -- {op, dev};
+    op -- dev [label="interaction" dir=both style=dashed];
+}

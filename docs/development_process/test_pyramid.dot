@@ -1,0 +1,42 @@
+graph test_pyramid {
+    rankdir = TB;
+
+    node[shape=box
+         style=filled
+         fillcolor=lightgrey
+         width=2.5
+        ];
+
+    ur      [label="User Requirements"];
+    sws     [label="Software Specification \n System Requirements"];
+    hld     [label="High Level Design \n Software Architecture"];
+    lld     [label="Low Level Design \n Component / Module Design"];
+    coding  [label="Coding"];
+    ut      [label="Unit Tests"];
+    subit   [label="Subsystem Integration Testing"];
+    sit     [label="System Integration Testing"];
+    st      [label="System Testing"];
+    at      [label="Acceptance Testing"];
+
+    ur     -- sws    [dir=forward ];
+    sws    -- hld    [dir=forward ];
+    hld    -- lld    [dir=forward ];
+    lld    -- coding [dir=forward ];
+    coding -- ut     [dir=forward ];
+    ut     -- subit  [dir=forward ];
+    subit  -- sit    [dir=forward ];
+    sit    -- st    [dir=forward ];
+    st     -- at     [dir=forward ];
+
+    {rank = same; ur; at;}
+    {rank = same; sws; st;}
+    {rank = same; hld; sit;}
+    {rank = same; lld; subit;}
+    {rank = same; coding; ut;}
+
+    ur  -- at    [dir=forward style=dashed label="Acceptance Test Plan"];
+    sws -- st    [dir=forward style=dashed label="System Test Plan"];
+    hld -- sit   [dir=forward style=dashed label="Integration Test Plan" len=3.5];
+    lld -- subit [dir=forward style=dashed label="Unit Test Plan" len=2.5];
+
+}

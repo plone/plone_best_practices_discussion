@@ -58,34 +58,14 @@ The Two Worlds of Software
 Software is not developed for the sake of development but with solving a use case in mind.
 The result of software development is most often to use the developed software in production --> operations.
 
-.. graphviz::
-
-    graph it {
-        sw [label="Software" shape=rounded];
-        op [label="Operations" shape=rounded];
-        dev [label="Development" shape=rounded];
-        rank = same; op; dev;
-
-        sw -- {op, dev};
-        op -- dev [dir=both len=5.0 constraint=false];
-    }
+.. graphviz::  base_triangle.dot
 
 Software Projects that have quality standards must enforce those standards and provide documented processes.
 
 For both **Software Development** and **System Operations** common IT Best Practices are published and widly addopted.
 In Operations Standards for *IT Service Management (ITSM)* `ISO 20000:2011 <https://en.wikipedia.org/wiki/ISO/IEC_20000>`_ for Software Development the `Capability Maturity Model Integration (CMMI) <https://en.wikipedia.org/wiki/Capability_Maturity_Model_Integration>`_ describes certain processes.
 
-.. graphviz::
-
-    graph it {
-        sw [label="Software" shape=rounded];
-        op [label="<B>Operations</B><BR/>ISO 20000:2011 / ITIL / FitSM" shape=rounded];
-        dev [label="Development" shape=rounded];
-        rank = same; op; dev;
-
-        sw -- {op, dev};
-        op -- dev [dir=both constraint=false];
-    }
+.. graphviz:: extended_triangle.dot
 
 One core Element of :ref:`cmmi` is a **Maturity Level**
 
