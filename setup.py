@@ -47,6 +47,7 @@ setup(
     zip_safe=False,
     install_requires=[
         'setuptools',
+        'sphinxcontrib-plantuml',
     ],
     extras_require={
     },
