@@ -21,6 +21,10 @@ Elements the community have agreed on, should be moved / implemented in plonecli
 Background
 ==========
 
+Plone has one big issue, it is still not fully ported to Python 3.
+Python 2 support will end on `01.01.2020 <https://pythonclock.org/>`_.
+For maintaining a software project substainable it is neccessary to have a defined process.
+
 The **Zen of Python** was written with the lessons learned from Zope in mind.
 A lot of those philosopical phases do not only apply to code but also to community practices, habits and methodoligies.
 
