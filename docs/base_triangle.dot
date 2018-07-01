@@ -12,5 +12,5 @@ graph it {
     rank = same; op; dev;
 
     sw -- {op, dev};
-    op -- dev [label="interaction\nDevOps & SRE" dir=both style=dashed];
+    op -- dev [label="growing together\nDevOps & SRE" dir=both style=dashed];
 }
