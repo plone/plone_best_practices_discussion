@@ -6,6 +6,7 @@
 *.egg-info
 *.EGG-INFO
 .*.cfg
+*.jar
 .tox/
 bin/
 build/
