@@ -1,42 +1,45 @@
 graph test_pyramid {
-    rankdir = TB;
+  layout="neato";
+  rankdir = TB;
 
-    node[shape=box
-         style=filled
-         fillcolor=lightgrey
-         width=2.5
-        ];
+  node[shape=box
+       style=filled
+       fillcolor=lightgrey
+       width=2.0
+       height=1.0
+       pin=true
+  ];
 
-    ur      [label="User Requirements"];
-    sws     [label="Software Specification \n System Requirements"];
-    hld     [label="High Level Design \n Software Architecture"];
-    lld     [label="Low Level Design \n Component / Module Design"];
-    coding  [label="Coding"];
-    ut      [label="Unit Tests"];
-    subit   [label="Subsystem Integration Testing"];
-    sit     [label="System Integration Testing"];
-    st      [label="System Testing"];
-    at      [label="Acceptance Testing"];
+  ur      [pos="-8.0,8.0" label="User Requirements"];
+  sws     [pos="-6.0,6.0" label="Software Specification \n System Requirements"];
+  hld     [pos="-4.0,4.0" label="High Level Design \n Software Architecture"];
+  lld     [pos="-2.0,2.0" label="Low Level Design \n Component / Module Design"];
+  coding  [pos="0.0,0.0" label="Coding"];
+  ut      [pos="3.0,0.0" label="Unit Tests"];
+  subit   [pos="5.0,2.0" label="Subsystem Integration Testing"];
+  sit     [pos="7.0,4.0" label="System Integration Testing"];
+  st      [pos="9.0,6.0" label="System Testing"];
+  at      [pos="11.0,8.0" label="Acceptance Testing"];
 
-    ur     -- sws    [dir=forward ];
-    sws    -- hld    [dir=forward ];
-    hld    -- lld    [dir=forward ];
-    lld    -- coding [dir=forward ];
-    coding -- ut     [dir=forward ];
-    ut     -- subit  [dir=forward ];
-    subit  -- sit    [dir=forward ];
-    sit    -- st    [dir=forward ];
-    st     -- at     [dir=forward ];
+  ur     -- sws    [dir=forward ];
+  sws    -- hld    [dir=forward ];
+  hld    -- lld    [dir=forward ];
+  lld    -- coding [dir=forward ];
+  coding -- ut     [dir=forward ];
+  ut     -- subit  [dir=forward ];
+  subit  -- sit    [dir=forward ];
+  sit    -- st    [dir=forward ];
+  st     -- at     [dir=forward ];
 
-    {rank = same; ur; at;}
-    {rank = same; sws; st;}
-    {rank = same; hld; sit;}
-    {rank = same; lld; subit;}
-    {rank = same; coding; ut;}
+  {rank = same; ur; at;}
+  {rank = same; sws; st;}
+  {rank = same; hld; sit;}
+  {rank = same; lld; subit;}
+  {rank = same; coding; ut;}
 
-    ur  -- at    [dir=forward style=dashed label="Acceptance Test Plan"];
-    sws -- st    [dir=forward style=dashed label="System Test Plan"];
-    hld -- sit   [dir=forward style=dashed label="Integration Test Plan" len=3.5];
-    lld -- subit [dir=forward style=dashed label="Unit Test Plan" len=2.5];
+  ur  -- at    [dir=forward style=dashed label="Acceptance Test Plan"];
+  sws -- st    [dir=forward style=dashed label="System Test Plan"];
+  hld -- sit   [dir=forward style=dashed label="Integration Test Plan" len=3.5];
+  lld -- subit [dir=forward style=dashed label="Unit Test Plan" len=2.5];
 
 }
