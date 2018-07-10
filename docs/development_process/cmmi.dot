@@ -5,28 +5,27 @@ graph cmmi {
 
   node[shape=box
        style=filled
-       width=2.5
        height=1.0
        pin=true
   ];
   edge[splines=polyline]
 
-  l1 [pos="0.0,0.0" label="Level 1:\n Initial" fillcolor=red shape=box width=2.5];
-  l2 [pos="2.0,1.25" label="Level 2:\n Managed"  fillcolor=orange shape=box width=2.5];
-  l3 [pos="4.0,2.50" label="Level 3:\n Defined"  fillcolor=yellow shape=box width=2.5];
-  l4 [pos="6.0,3.75" label="Level 4:\n Quantitatively Managed"  fillcolor=greenyellow shape=box width=2.5];
-  l5 [pos="8.0,5.00" label="Level 5:\n Optimizing"  fillcolor=green shape=box width=2.5];
+  l1 [pos="0.00,0.00" label=<<I>Level 1:</I><BR/><B>Initial</B>> fillcolor=red shape=box width=2];
+  l2 [pos="2.00,1.25" label=<<I>Level 2:</I><BR/><B>Managed</B>>  fillcolor=orange shape=box width=2];
+  l3 [pos="4.00,2.50" label=<<I>Level 3:</I><BR/><B>Defined</B>>  fillcolor=yellow shape=box width=2];
+  l4 [pos="6.00,3.75" label=<<I>Level 4:</I><BR/><B>Quantitatively<BR/>Managed</B>>  fillcolor=greenyellow shape=box width=2];
+  l5 [pos="8.00,5.00" label=<<I>Level 5:</I><BR/><B>Optimizing</B>>  fillcolor=green shape=box width=2];
 
-  l1c [pos="4.0,0.0" label="Process unpredictable, poorly controlled and reactive" shape=note  fillcolor=lightyellow width=3 height=0.75];
-  l2c [pos="6.0,1.25" label="Process characterized for projects and is often reactive" shape=note  fillcolor=lightyellow width=3 height=0.75];
-  l3c [pos="8.0,2.50" label="Process characterized for the organisation and is proactice" shape=note  fillcolor=lightyellow width=3 height=0.75];
-  l4c [pos="9.2,3.75" label="Process measured and controlled" shape=note  fillcolor=lightyellow width=3 height=0.75];
-  l5c [pos="11.2,5.00" label="Focus on process improvement" shape=note  fillcolor=lightyellow width=3 height=0.75];
+  l1c [pos="03.00,0.00" label="Process unpredictable,\npoorly controlled and reactive" shape=note  fillcolor=lightyellow width=3 height=0.75];
+  l2c [pos="05.00,1.25" label="Process characterized for\nprojects and is often reactive" shape=note  fillcolor=lightyellow width=3 height=0.75];
+  l3c [pos="07.00,2.50" label="Process characterized for\nthe organisation and is proactice" shape=note  fillcolor=lightyellow width=3 height=0.75];
+  l4c [pos="09.00,3.75" label="Process measured\nand controlled" shape=note  fillcolor=lightyellow width=3 height=0.75];
+  l5c [pos="11.00,5.00" label="Focus on\nprocess improvement" shape=note  fillcolor=lightyellow width=3 height=0.75];
 
-  l1 -- l2 [dir=forward];
-  l2 -- l3 [dir=forward];
-  l3 -- l4 [dir=forward];
-  l4 -- l5 [dir=forward];
+  l1 -- l2 [dir=forward penwidth=5];
+  l2 -- l3 [dir=forward penwidth=5];
+  l3 -- l4 [dir=forward penwidth=5];
+  l4 -- l5 [dir=forward penwidth=5];
 
   l1 -- l1c [style=dashed];
   l2 -- l2c [style=dashed];
