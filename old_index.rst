@@ -4,19 +4,6 @@
 Discussion on Plone Best Practices
 ==================================
 
-This Repository is a Backlog of Ideas and Concepts for Discussion.
-Fundamental changes on the codebase and documentation on Plone should be discussed before they will be implemented or enforced in core development.
-
-The problem with *best practices* are, that everyone follow them, without knowing why they are done or why they came up.
-Sometimes *best practices* harms a project, if the where not revisited and changed to better approcaches regularly.
-
-
-
-
-
-
-This Package is a Placeholder / Backlog of Ideas and Concepts we want to discuss and afterwards move to general Documentation / Trainings Documentation or specific Documentations of Packages or Development Setups like buildout.coredev.
-
 Mission Statement
 =================
 
@@ -97,8 +84,6 @@ Contents
     :maxdepth: 5
     :caption: Contents:
 
-    development_process/index.rst
-    operations_process/index.rst
     package_layout/index.rst
     tools/index.rst
 
