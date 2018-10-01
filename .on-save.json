@@ -1,9 +1,9 @@
 [
   {
     "srcDir": ".",
-    "destDir": ".",
+    "destDir": "_build",
     "files": "**/*",
-    "command": "tox",
+    "command": "PATH=./bin/:$PATH make html",
     "showOutput": false,
     "showError": false
   }
