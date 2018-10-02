@@ -1,8 +1,18 @@
+.. _package_layout:
+
+====================
 Plone Package Layout
 ====================
 
+Proposal of Alexander Loechel
+=============================
+
+Currently we do not have a recommended / defined package layout for Plone core or Plone addon packages.
+All packages are Python eggs
+
+
 We encourage all developer to use a certain package layout.
-This package layout should be provided by skeletion generators (:ref:`plonecli`, underlying Template Set :ref:`bobtemplates_plone` of :ref:`mr_bob`, or old ref:`zopeskel`).
+This package layout should be provided by skeletion generators (`PloneCLI <https://pypi.org/project/plonecli/>`_ , underlying Template Set `bobtemplates.plone <https://pypi.org/project/bobtemplates.plone/>`_ of `mr.bob <https://pypi.org/project/mr.bob/>`_, or old `ZopeSkel <https://pypi.org/project/ZopeSkel/>`_).
 
 .. code-block:: filesystem
 
@@ -75,6 +85,3 @@ Explanation of Configuration Files
 
     setup_cfg/index
     tests_folder.rst
-    ../tools/tox/index
-    ../tools/travis_ci/index
-    ../tools/jenkins/index
