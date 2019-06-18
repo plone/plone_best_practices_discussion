@@ -1,0 +1,29 @@
+graph plip {
+
+  label=<<B>Plone Improvement Process (PLIP)</B>>;
+  labelloc=t;
+  rankdir=TD;
+
+  node[shape=box
+       width=2.75
+       height=1
+      ];
+
+  new [label=<<B>New</B>(Draft)>];
+  submitted [label=<<B>Submitted</B> (Info complete)>];
+  approved [label=<<B>Approved</B> (In Progress)>];
+  stalled [label=<<B>Stalled</B> ()>];
+  inreview [label=<<B>Under Review</B> (implemented)>];
+  merged [label=<<B>Merged</B> (completed)>];
+  revoked [label=<<B>Revoked</B>>];
+  disapproved [label=<<B>Disapproved</B>>];
+
+
+
+  new -- submitted -- approved -- inreview -- merged;
+  approved -- stalled -- approved;
+  submitted -- disapproved;
+  {new, submitted, approved, stalled, inreview} -- revoked;
+
+  rank = same approved stalled disapproved;
+}
